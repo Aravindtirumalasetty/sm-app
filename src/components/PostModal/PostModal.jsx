@@ -72,6 +72,7 @@ export const PostModal = () => {
   const handleImage = async (e) => {
     e.preventDefault();
     const file = e.target.files[0];
+    console.log("hi");
     const loading = toast.loading("Uploading image...");
     const link = await UploadImage(`posts/${token}/post-cover.jpg`, file);
     toast.success("Uploaded image", { id: loading });
@@ -86,7 +87,6 @@ export const PostModal = () => {
 
   return (
     <div className="relative flex  h-fit min-h-[13rem] w-full flex-col items-start justify-between gap-4 border-y-2 border-r-2 border-gray-200 bg-white px-3 pt-6">
-
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="relative flex h-full w-full flex-col items-start justify-between"
